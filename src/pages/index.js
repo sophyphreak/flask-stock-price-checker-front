@@ -1,4 +1,5 @@
 import React from "react"
+import Frontend from "../components/frontend"
 
 const IndexPage = () => (
   <div>
@@ -8,10 +9,6 @@ const IndexPage = () => (
     <div id="userstories" style={{ marginLeft: "5%", marginTop: "5%" }}>
       <h3>User Stories</h3>
       <ol>
-        <li>
-          Set the content security policies to only allow loading of scripts and
-          css from your server.
-        </li>
         <li>
           I can <b>GET</b> <code>/api/stock-prices</code> with form data
           containing a Nasdaq <i>stock</i> ticker and recieve back an object
@@ -31,12 +28,6 @@ const IndexPage = () => (
           stock's info but instead of <i>likes</i>, it will display
           <i>rel_likes</i>(the difference between the likes on both) on both.
         </li>
-        <li>
-          A good way to receive current price is the following external
-          API(replacing 'GOOG' with your stock):
-          <code>https://finance.google.com/finance/info?q=NASDAQ%3aGOOG</code>
-        </li>
-        <li>All 5 functional tests are complete and passing.</li>
       </ol>
       <h3>Example usage:</h3>
       <code>/api/stock-prices?stock=goog</code>
@@ -58,53 +49,7 @@ const IndexPage = () => (
       </code>
     </div>
     <hr style={{ margin: "50px" }} />
-    <div id="testui" style={{ marginLeft: "5%" }}>
-      <h2 style={{ textAlign: "left" }}>Front-End:</h2>
-      <h3>Get single price and total likes</h3>
-      <form
-        action="/api/stock-prices"
-        method="GET"
-        id="testForm2"
-        className="border"
-      >
-        <input
-          type="text"
-          name="stock"
-          placeholder="goog"
-          style={{ width: "100px" }}
-          required=""
-        />
-        <input type="checkbox" name="like" value="true" /> Like?
-        <br />
-        <button type="submit">Get Price!</button>
-      </form>
-      <h3>Compare and get relative likes</h3>
-      <form
-        action="/api/stock-prices"
-        method="GET"
-        id="testForm"
-        className="border"
-      >
-        <input
-          type="text"
-          name="stock"
-          placeholder="goog"
-          style={{ width: "100px" }}
-          required=""
-        />
-        <input
-          type="text"
-          name="stock"
-          placeholder="msft"
-          style={{ width: "100px" }}
-          required=""
-        />
-        <input type="checkbox" name="like" value="true" /> Like both?
-        <br />
-        <button type="submit">Get Price!</button>
-      </form>
-      <code id="jsonResult"></code>
-    </div>
+    <Frontend />
     <hr style={{ margin: "50px", marginTop: "200px" }} />
   </div>
 )
