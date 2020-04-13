@@ -1,5 +1,6 @@
 import React from "react"
 import Frontend from "../components/frontend"
+import "./style.css"
 
 const IndexPage = () => (
   <div>
@@ -48,6 +49,16 @@ const IndexPage = () => (
         }
       </code>
     </div>
+    <hr style={{ margin: "50px" }} />
+
+    <p className="border" style={{ padding: "3%" }}>
+      <b>
+        Try yourself with the endpoint of <br />{" "}
+        <code>
+          https://flask-stock-price-checker.andrew-horn-portfolio.life/api/stock-prices
+        </code>
+      </b>
+    </p>
     <hr style={{ margin: "50px" }} />
     <Frontend />
     <hr style={{ margin: "50px", marginTop: "200px" }} />
